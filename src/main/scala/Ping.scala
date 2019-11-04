@@ -1,6 +1,6 @@
 package playground
 
-import akka.actor.{Actor}
+import akka.actor.Actor
 
 class Ping extends Actor {
   override def receive: Receive = {
