@@ -1,18 +1,35 @@
 package playground
 
 import akka.actor.{ActorSystem, Props}
-
+import java.io.{ByteArrayInputStream, InputStream}
+import java.nio.charset.StandardCharsets
 
 object Globals { 
-
-  private var debug = false
-  def getDebugFlag = debug
-  def toggleDebug = debug = !debug
-
   val system = ActorSystem("highlander")
-  val worker1 = system.actorOf(Props[Ping])
-  val worker2 = system.actorOf(Props[Pong])
+  val dataWorker = system.actorOf(Props[Preprocessor])
+  val solverWorker = system.actorOf(Props[Processor])
 
-  case class Message(string: String)
+
+  var debug = false
+  def turnDebugOn = debug = true
+  def turnDebugOff= debug = false
+  def getDebugFlag = debug
+
+  val orderLimit = 100000
+  val factoryLimit = 1000000000
+  val input =
+      """3
+    |0 3
+    |1 9
+    |2 5
+    |""".stripMargin
+
+  //small helper for testing.
+  def getStream = {
+    val bytes = input.getBytes(StandardCharsets.UTF_8)
+    new ByteArrayInputStream(bytes)
+  }
+
+
 
 }

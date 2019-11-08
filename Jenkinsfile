@@ -2,12 +2,15 @@
 
 pipeline {
     agent any
+
     stages {
+
         stage('Test') {
             steps {
                 echo "Testing..."
                 sh "/usr/local/bin/sbt test"
             }
         } /* end test */
+
     } /* end stages */
 } /* end piplines */

@@ -1,0 +1,45 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+App	App.scala	/^object App {$/;"	c
+Globals	Globals.scala	/^object Globals { $/;"	c
+Preprocessor	Preprocessor.scala	/^class Preprocessor extends Actor {$/;"	c
+ProcessedData	Processor.scala	/^case class ProcessedData(stack: Stack[(Long, Long)])$/;"	c
+Processor	Processor.scala	/^class Processor extends Actor {$/;"	c
+UserInput	Preprocessor.scala	/^case class UserInput(theStream: InputStream)$/;"	c
+arrival	Preprocessor.scala	/^          val arrival = r.readLong()$/;"	l
+bytes	Globals.scala	/^    val bytes = input.getBytes(StandardCharsets.UTF_8)$/;"	l
+codec	Preprocessor.scala	/^    implicit val codec: JsonValueCodec[Long] = new JsonValueCodec[Long] {$/;"	l
+curtask	Processor.scala	/^        val curtask = workStack.pop()$/;"	l
+dataWorker	Globals.scala	/^  val dataWorker = system.actorOf(Props[Preprocessor])$/;"	l
+datafuture	App.scala	/^      val datafuture = dataWorker ? UserInput(in)$/;"	l
+debug	Globals.scala	/^  var debug = false$/;"	l
+debug	Processor.scala	/^  val debug = Globals.getDebugFlag$/;"	l
+duration	Preprocessor.scala	/^          val duration = r.readLong()$/;"	l
+element	Processor.scala	/^        val element = inStack.pop().swap$/;"	l
+extractStack	Preprocessor.scala	/^  def extractStack(in: InputStream): Stack[(Long, Long)] = {$/;"	m
+factoryLimit	Globals.scala	/^  val factoryLimit = 1000000000$/;"	l
+factoryLimit	Preprocessor.scala	/^  val factoryLimit = 1000000000$/;"	l
+getDebugFlag	Globals.scala	/^  def getDebugFlag = debug$/;"	m
+getStream	Globals.scala	/^  def getStream = {$/;"	m
+input	Globals.scala	/^  val input =$/;"	l
+n	Preprocessor.scala	/^        val n = r.readInt$/;"	l
+orderLimit	Globals.scala	/^  val orderLimit = 100000$/;"	l
+orderLimit	Preprocessor.scala	/^  val orderLimit = 100000$/;"	l
+outStack	Preprocessor.scala	/^    val outStack = Stack[(Long, Long)]()$/;"	l
+playground	App.scala	/^package playground$/;"	p
+playground	Globals.scala	/^package playground$/;"	p
+playground	Preprocessor.scala	/^package playground$/;"	p
+playground	Processor.scala	/^package playground$/;"	p
+res	App.scala	/^      val res =$/;"	l
+run	App.scala	/^  def run(in: InputStream): Either[String, Long] = {$/;"	m
+solutionfuture	App.scala	/^      val solutionfuture = solverWorker ? ProcessedData(stack)$/;"	l
+solverWorker	Globals.scala	/^  val solverWorker = system.actorOf(Props[Processor])$/;"	l
+stack	App.scala	/^      val stack = Await$/;"	l
+system	Globals.scala	/^  val system = ActorSystem("highlander")$/;"	l
+timeout	App.scala	/^  implicit val timeout = Timeout(1 seconds)$/;"	l
+turnDebugOff	Globals.scala	/^  def turnDebugOff= debug = false$/;"	m
+turnDebugOn	Globals.scala	/^  def turnDebugOn = debug = true$/;"	m
