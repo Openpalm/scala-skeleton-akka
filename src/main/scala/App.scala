@@ -15,27 +15,28 @@ import Globals.{dataWorker, solverWorker}
 
 object App {
 
+	implicit val timeout = Timeout(1 seconds)
 
-  implicit val timeout = Timeout(1 seconds)
+	/**
+	 * @param in An InputStream
+	 *
+	 * @return   Either[String, Long] 
+	 * */
+	def run(in: InputStream): Either[String, Long] = {
+		try {
+			val datafuture = dataWorker ? UserInput(in)
+			val stack = Await
+				.result(datafuture, timeout.duration)
+				.asInstanceOf[Stack[(Long, Long)]]
 
-  /**
-    * @param in An InputStream
-    *
-    * @return   Either[String, Long] 
-    * */
-  def run(in: InputStream): Either[String, Long] = {
-    try {
-      val datafuture = dataWorker ? UserInput(in)
-      val stack = Await
-        .result(datafuture, timeout.duration)
-        .asInstanceOf[Stack[(Long, Long)]]
-
-      val solutionfuture = solverWorker ? ProcessedData(stack)
-      val res =
-        Await.result(solutionfuture, timeout.duration).asInstanceOf[Long]
-      Right(res / (stack.size))
-    } catch {
-      case e: Throwable => Left(e.getMessage)
-    }
-  } //.. end process
-} //.. end OrderProcessor
+				val solutionfuture = solverWorker ? ProcessedData(stack)
+				val res = Await.
+				result(
+					solutionfuture, 
+					timeout.duration).asInstanceOf[Long]
+				Right(res / (stack.size))
+			} catch {
+				case e: Throwable => Left(e.getMessage)
+			}
+	}
+}

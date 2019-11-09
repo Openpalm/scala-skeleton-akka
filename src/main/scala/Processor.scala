@@ -37,13 +37,13 @@ class Processor extends Actor {
       overallWaitTime: Long,
       currentJobWaitTime: Long
   ): Long = {
-    if (debug) {
-      println(s"""
-          |inStack: $inStack
-          |workStack: $workStack
-          |overallWaitTime: $overallWaitTime
-          |currentJobWaitTime: $currentJobWaitTime """.stripMargin)
-    }
+    //if (debug) {
+    //  println(s"""
+    //      |inStack: $inStack
+    //      |workStack: $workStack
+    //      |overallWaitTime: $overallWaitTime
+    //      |currentJobWaitTime: $currentJobWaitTime """.stripMargin)
+    //}
     if (inStack.isEmpty && workStack.isEmpty) overallWaitTime
     else {
       /* inStack.reverse.head._1 => last incoming's item arrival time/ordering */

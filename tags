@@ -1,0 +1,61 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+App	src/main/scala/App.scala	/^object App {$/;"	c
+AppTest	src/test/scala/Tests.scala	/^class AppTest$/;"	c
+BADFACTORY	src/main/scala/TestGlobals.scala	/^	val BADFACTORY =	getStream(input_badFactory)$/;"	l
+BADORDER	src/main/scala/TestGlobals.scala	/^	val BADORDER =		getStream(input_badOrder)$/;"	l
+BADORDERLIMIT	src/main/scala/TestGlobals.scala	/^	val BADORDERLIMIT =		getStream(input_badOrderLimit)$/;"	l
+GOODORDER	src/main/scala/TestGlobals.scala	/^	val GOODORDER =		getStream(input) $/;"	l
+Globals	src/main/scala/Globals.scala	/^object Globals { $/;"	c
+Preprocessor	src/main/scala/Preprocessor.scala	/^class Preprocessor extends Actor {$/;"	c
+ProcessedData	src/main/scala/Processor.scala	/^case class ProcessedData(stack: Stack[(Long, Long)])$/;"	c
+Processor	src/main/scala/Processor.scala	/^class Processor extends Actor {$/;"	c
+TestGlobals	src/main/scala/TestGlobals.scala	/^object TestGlobals { $/;"	c
+UserInput	src/main/scala/Preprocessor.scala	/^case class UserInput(theStream: InputStream)$/;"	c
+amm	target/scala-2.12/src_managed/test/amm.scala	/^object amm extends App { ammonite.Main.main(args) }/;"	c
+arrival	src/main/scala/Preprocessor.scala	/^          val arrival = r.readLong()$/;"	l
+bytes	src/main/scala/TestGlobals.scala	/^		val bytes = i.getBytes(StandardCharsets.UTF_8)$/;"	l
+codec	src/main/scala/Preprocessor.scala	/^    implicit val codec: JsonValueCodec[Long] = new JsonValueCodec[Long] {$/;"	l
+curtask	src/main/scala/Processor.scala	/^        val curtask = workStack.pop()$/;"	l
+dataWorker	src/main/scala/Globals.scala	/^  val dataWorker = system.actorOf(Props[Preprocessor])$/;"	l
+datafuture	src/main/scala/App.scala	/^			val datafuture = dataWorker ? UserInput(in)$/;"	l
+debug	src/main/scala/Globals.scala	/^  var debug = false$/;"	l
+debug	src/main/scala/Processor.scala	/^  val debug = Globals.getDebugFlag$/;"	l
+duration	src/main/scala/Preprocessor.scala	/^          val duration = r.readLong()$/;"	l
+element	src/main/scala/Processor.scala	/^        val element = inStack.pop().swap$/;"	l
+extractStack	src/main/scala/Preprocessor.scala	/^  def extractStack(in: InputStream): Stack[(Long, Long)] = {$/;"	m
+factoryLimit	src/main/scala/Preprocessor.scala	/^  val factoryLimit = 1000000000$/;"	l
+factoryLimit	src/main/scala/TestGlobals.scala	/^	val factoryLimit = 1000000000$/;"	l
+getDebugFlag	src/main/scala/Globals.scala	/^  def getDebugFlag = debug$/;"	m
+getStream	src/main/scala/TestGlobals.scala	/^	def getStream(i: String): ByteArrayInputStream = {$/;"	m
+input	src/main/scala/TestGlobals.scala	/^	val input =$/;"	l
+input_badFactory	src/main/scala/TestGlobals.scala	/^	val input_badFactory =$/;"	l
+input_badOrder	src/main/scala/TestGlobals.scala	/^	val input_badOrder =$/;"	l
+input_badOrderLimit	src/main/scala/TestGlobals.scala	/^	val input_badOrderLimit =$/;"	l
+n	src/main/scala/Preprocessor.scala	/^        val n = r.readInt$/;"	l
+orderLimit	src/main/scala/Preprocessor.scala	/^  val orderLimit = 100000$/;"	l
+orderLimit	src/main/scala/TestGlobals.scala	/^	val orderLimit = 100000$/;"	l
+outStack	src/main/scala/Preprocessor.scala	/^    val outStack = Stack[(Long, Long)]()$/;"	l
+playground	src/main/scala/App.scala	/^package playground$/;"	p
+playground	src/main/scala/Globals.scala	/^package playground$/;"	p
+playground	src/main/scala/Preprocessor.scala	/^package playground$/;"	p
+playground	src/main/scala/Processor.scala	/^package playground$/;"	p
+playground	src/main/scala/TestGlobals.scala	/^package playground$/;"	p
+playground	src/test/scala/Tests.scala	/^package playground$/;"	p
+res	src/main/scala/App.scala	/^				val res = Await.$/;"	l
+res	src/test/scala/Tests.scala	/^    val res = App.run(BADFACTORY)$/;"	l
+res	src/test/scala/Tests.scala	/^    val res = App.run(BADORDER)$/;"	l
+res	src/test/scala/Tests.scala	/^    val res = App.run(BADORDERLIMIT)$/;"	l
+res	src/test/scala/Tests.scala	/^    val res = App.run(GOODORDER)$/;"	l
+run	src/main/scala/App.scala	/^	def run(in: InputStream): Either[String, Long] = {$/;"	m
+solutionfuture	src/main/scala/App.scala	/^				val solutionfuture = solverWorker ? ProcessedData(stack)$/;"	l
+solverWorker	src/main/scala/Globals.scala	/^  val solverWorker = system.actorOf(Props[Processor])$/;"	l
+stack	src/main/scala/App.scala	/^			val stack = Await$/;"	l
+system	src/main/scala/Globals.scala	/^  val system = ActorSystem("highlander")$/;"	l
+timeout	src/main/scala/App.scala	/^	implicit val timeout = Timeout(1 seconds)$/;"	l
+turnDebugOff	src/main/scala/Globals.scala	/^  def turnDebugOff= debug = false$/;"	m
+turnDebugOn	src/main/scala/Globals.scala	/^  def turnDebugOn = debug = true$/;"	m
